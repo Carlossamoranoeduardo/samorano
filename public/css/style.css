@@ -1,0 +1,304 @@
+
+:root {
+  color-scheme: dark;
+  --blue: #287cff;
+  --purple: #a13cff;
+  --background: #080d20;
+  --text: #ffffff;
+  --muted: #c9cde0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  min-height: 100dvh;
+  background: var(--background);
+  color: var(--text);
+  font-family: Inter, "Segoe UI", Arial, sans-serif;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+button {
+  -webkit-tap-highlight-color: transparent;
+}
+
+.welcome {
+  position: relative;
+  isolation: isolate;
+  min-height: 100vh;
+  min-height: 100dvh;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  overflow: hidden;
+  padding: 40px 24px 28px;
+}
+
+.background-image,
+.background-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+}
+
+.background-image {
+  background-image: url("/assets/samorano-capa.png");
+  background-position: center;
+  background-size: cover;
+  transform: scale(1.015);
+}
+
+.background-overlay {
+  z-index: -1;
+  background:
+    linear-gradient(
+      180deg,
+      rgba(4, 8, 25, .06) 0%,
+      rgba(4, 8, 25, .12) 35%,
+      rgba(4, 8, 25, .68) 61%,
+      #080d20 100%
+    );
+}
+
+.welcome-content {
+  width: min(100%, 390px);
+  margin: auto 0 0;
+  text-align: center;
+  padding-top: 32px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.brand-symbol,
+.dialog-symbol {
+  display: grid;
+  place-items: center;
+  font-weight: 900;
+  font-style: italic;
+  color: white;
+  background: linear-gradient(145deg, #36a4ff, #7049ff 58%, #e83de8);
+  box-shadow: 0 0 30px rgba(78, 100, 255, .36);
+}
+
+.brand-symbol {
+  width: 42px;
+  height: 42px;
+  border-radius: 15px;
+  font-size: 30px;
+}
+
+.brand h1 {
+  margin: 0;
+  font-size: clamp(35px, 9vw, 47px);
+  letter-spacing: -2px;
+  font-weight: 800;
+}
+
+.tagline {
+  color: #f0edff;
+  font-size: 16px;
+  line-height: 1.55;
+  margin: 12px 0 30px;
+  text-shadow: 0 2px 12px #000;
+}
+
+.welcome-actions {
+  display: grid;
+  gap: 11px;
+}
+
+.button {
+  width: 100%;
+  min-height: 53px;
+  border: 1px solid transparent;
+  border-radius: 18px;
+  padding: 13px 18px;
+  color: white;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform .16s, filter .16s, border-color .16s;
+}
+
+.button:active {
+  transform: scale(.98);
+}
+
+.button:focus-visible {
+  outline: 3px solid #fff;
+  outline-offset: 3px;
+}
+
+.button-primary {
+  background: linear-gradient(105deg, var(--blue), var(--purple));
+  box-shadow: 0 9px 28px rgba(73, 81, 255, .24);
+}
+
+.button-primary:hover {
+  filter: brightness(1.12);
+}
+
+.button-primary span {
+  margin-right: 8px;
+  font-size: 20px;
+}
+
+.button-secondary {
+  background: rgba(20, 29, 51, .72);
+  border-color: rgba(255, 255, 255, .23);
+  backdrop-filter: blur(14px);
+}
+
+.footer-note {
+  color: var(--muted);
+  font-size: 12px;
+  margin: 24px 0 18px;
+}
+
+.features {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  color: #dce4ff;
+  font-size: 12px;
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+
+.account-dialog {
+  position: fixed;
+  width: min(92vw, 400px);
+  max-height: 88dvh;
+  overflow-y: auto;
+  border: 1px solid #343d5b;
+  border-radius: 25px;
+  padding: 28px 23px 24px;
+  background: #10172a;
+  color: white;
+  box-shadow: 0 25px 100px #000b;
+}
+
+.account-dialog::backdrop {
+  background: rgba(1, 4, 15, .78);
+  backdrop-filter: blur(8px);
+}
+
+.dialog-close {
+  position: absolute;
+  right: 15px;
+  top: 10px;
+  border: 0;
+  background: transparent;
+  color: white;
+  font-size: 30px;
+  cursor: pointer;
+}
+
+.dialog-symbol {
+  width: 48px;
+  height: 48px;
+  border-radius: 16px;
+  font-size: 32px;
+}
+
+.account-dialog h2 {
+  margin: 18px 0 8px;
+  font-size: 23px;
+}
+
+.account-dialog > p {
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.account-dialog form {
+  display: grid;
+  gap: 10px;
+  margin-top: 22px;
+}
+
+.account-dialog label {
+  font-size: 13px;
+  color: #e2e7ff;
+}
+
+.account-dialog input {
+  width: 100%;
+  min-height: 48px;
+  border: 1px solid #343d59;
+  border-radius: 13px;
+  padding: 12px;
+  outline: none;
+  background: #0a1020;
+  color: white;
+  margin-bottom: 6px;
+}
+
+.account-dialog input:focus {
+  border-color: #6979ff;
+  box-shadow: 0 0 0 3px #6979ff25;
+}
+
+.form-message {
+  min-height: 20px;
+  color: #c9d5ff;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+@media (min-width: 700px) {
+  .welcome {
+    align-items: center;
+    padding: 48px;
+  }
+
+  .welcome-content {
+    width: min(100%, 430px);
+    margin: auto 5vw auto auto;
+    padding: 34px;
+    border: 1px solid #ffffff25;
+    border-radius: 30px;
+    background: rgba(6, 12, 31, .58);
+    backdrop-filter: blur(16px);
+  }
+
+  .tagline {
+    margin-bottom: 28px;
+  }
+}
+
+@media (max-height: 680px) {
+  .welcome {
+    padding-top: 20px;
+    padding-bottom: 18px;
+  }
+
+  .tagline {
+    margin: 8px 0 17px;
+  }
+
+  .footer-note {
+    margin: 14px 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    transition: none !important;
+  }
+}

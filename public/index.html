@@ -1,0 +1,77 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#080d20">
+  <meta name="description" content="Samorano: compartilhe fotos, converse e conecte-se.">
+  <title>Samorano — Conecte-se de forma diferente</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <main class="welcome">
+    <div class="background-image" aria-hidden="true"></div>
+    <div class="background-overlay" aria-hidden="true"></div>
+
+    <section class="welcome-content">
+      <div class="brand">
+        <div class="brand-symbol" aria-hidden="true">S</div>
+        <h1>Samorano</h1>
+      </div>
+
+      <p class="tagline">
+        Suas fotos, suas conversas,<br>
+        seu mundo em um só lugar.
+      </p>
+
+      <div class="welcome-actions">
+        <button class="button button-primary" id="createAccount">
+          <span>＋</span> Criar conta
+        </button>
+
+        <button class="button button-secondary" id="login">
+          Entrar na minha conta
+        </button>
+      </div>
+
+      <p class="footer-note">Conecte-se de forma diferente.</p>
+
+      <div class="features">
+        <span>◉ Fotos</span>
+        <span>♡ Amigos</span>
+        <span>↗ Mensagens</span>
+      </div>
+    </section>
+  </main>
+
+  <dialog id="accountDialog" class="account-dialog">
+    <button class="dialog-close" id="closeDialog" aria-label="Fechar">×</button>
+    <div class="dialog-symbol">S</div>
+    <h2 id="dialogTitle">Bem-vindo ao Samorano</h2>
+    <p id="dialogDescription">Sua próxima conexão começa aqui.</p>
+
+    <form id="accountForm">
+      <label for="name">Nome</label>
+      <input id="name" name="name" autocomplete="name"
+        placeholder="Como podemos chamar você?">
+
+      <label for="email">E-mail</label>
+      <input id="email" name="email" type="email"
+        autocomplete="email" placeholder="voce@exemplo.com" required>
+
+      <label for="password">Senha</label>
+      <input id="password" name="password" type="password"
+        autocomplete="current-password" minlength="8"
+        placeholder="Mínimo de 8 caracteres" required>
+
+      <button class="button button-primary" type="submit" id="submitAccount">
+        Continuar
+      </button>
+      <p id="formMessage" class="form-message" role="status"></p>
+    </form>
+  </dialog>
+
+  <script src="/js/app.js" defer></script>
+</body>
+</html>

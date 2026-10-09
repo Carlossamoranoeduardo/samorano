@@ -1,0 +1,254 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#080d20">
+  <title>Início | Samorano</title>
+  <link rel="stylesheet" href="/css/feed.css">
+  <script src="/js/feed.js" defer></script>
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="/feed.html">
+      <span class="brand-mark">S</span>
+      <span>Samorano</span>
+    </a>
+    <label class="search">
+      <span>⌕</span>
+      <input id="searchInput" placeholder="Buscar pessoas e fotos">
+    </label>
+    <button class="avatar small" id="headerProfile" aria-label="Abrir perfil">S</button>
+  </header>
+
+  <div class="layout">
+    <aside class="sidebar">
+      <button class="nav-item active" data-page="home">⌂ <span>Início</span></button>
+      <button class="nav-item" data-page="explore">⌕ <span>Explorar</span></button>
+      <button class="nav-item" data-page="messages">▢ <span>Mensagens</span></button>
+      <button class="nav-item" data-page="profile">◉ <span>Meu perfil</span></button>
+      <button class="nav-item" data-page="publish">＋ <span>Publicar foto</span></button>
+      <div class="sidebar-bottom">
+        <p>Compartilhe seus momentos.</p>
+        <button id="logoutButton" class="logout">Sair da conta ↗</button>
+      </div>
+    </aside>
+
+    <main class="main-content">
+      <section id="homePage" class="page">
+        <div class="welcome-heading">
+          <div>
+            <p class="eyebrow">SEU MUNDO, SUAS CONEXÕES</p>
+            <h1>Seu espaço, <span id="welcomeName">bem-vindo</span>.</h1>
+            <p class="muted">Descubra o que seus amigos estão compartilhando.</p>
+          </div>
+          <button class="primary-button" data-go="publish">＋ Nova publicação</button>
+        </div>
+
+        <section class="stories-section">
+          <h2>Momentos</h2>
+          <div class="stories">
+            <button class="story own-story" data-go="publish">
+              <span class="story-ring"><span class="avatar">＋</span></span>
+              <span>Seu momento</span>
+            </button>
+            <div class="story">
+              <span class="story-ring"><span class="avatar">A</span></span>
+              <span>Ana</span>
+            </div>
+            <div class="story">
+              <span class="story-ring ring-blue"><span class="avatar">L</span></span>
+              <span>Lucas</span>
+            </div>
+            <div class="story">
+              <span class="story-ring ring-pink"><span class="avatar">C</span></span>
+              <span>Clara</span>
+            </div>
+            <div class="story">
+              <span class="story-ring ring-gold"><span class="avatar">M</span></span>
+              <span>Matheus</span>
+            </div>
+          </div>
+        </section>
+
+        <div class="feed-layout">
+          <section>
+            <div class="section-heading">
+              <h2>Feed de fotos</h2>
+              <span class="live-label"><span></span> Seu espaço social</span>
+            </div>
+            <div id="postFeed" class="post-feed">
+              <article class="post-card">
+                <div class="post-header">
+                  <span class="avatar">A</span>
+                  <div><strong>Ana Souza</strong><small>@anasouza · exemplo</small></div>
+                  <button class="more-button" aria-label="Mais opções">•••</button>
+                </div>
+                <img class="post-image" src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1000&q=85" alt="Paisagem de montanhas e natureza" loading="lazy">
+                <div class="post-actions">
+                  <button class="like-button">♡ <span>Curtir</span></button>
+                  <button class="comment-button">▢ <span>Comentar</span></button>
+                  <button class="share-button">↗ <span>Compartilhar</span></button>
+                </div>
+                <div class="post-caption"><strong>Ana Souza</strong> Um lugar para respirar e recomeçar. ✨</div>
+                <p class="muted post-note">Publicação de demonstração</p>
+              </article>
+
+              <article class="post-card">
+                <div class="post-header">
+                  <span class="avatar avatar-purple">L</span>
+                  <div><strong>Lucas Martins</strong><small>@lucasm · exemplo</small></div>
+                  <button class="more-button" aria-label="Mais opções">•••</button>
+                </div>
+                <img class="post-image" src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1000&q=85" alt="Praia com água azul" loading="lazy">
+                <div class="post-actions">
+                  <button class="like-button">♡ <span>Curtir</span></button>
+                  <button class="comment-button">▢ <span>Comentar</span></button>
+                  <button class="share-button">↗ <span>Compartilhar</span></button>
+                </div>
+                <div class="post-caption"><strong>Lucas Martins</strong> Próxima parada: praia! 🌊</div>
+                <p class="muted post-note">Publicação de demonstração</p>
+              </article>
+            </div>
+          </section>
+
+          <aside class="right-panel">
+            <div class="panel-card">
+              <p class="eyebrow">SEU PERFIL</p>
+              <div class="profile-summary">
+                <span class="avatar avatar-large" id="summaryAvatar">S</span>
+                <div><strong id="summaryName">Samorano</strong><small id="summaryEmail">Sua conta</small></div>
+              </div>
+              <button class="outline-button full-button" data-go="profile">Ver meu perfil</button>
+            </div>
+            <div class="panel-card">
+              <p class="eyebrow">IDEIA DO SAMORANO</p>
+              <h3>Compartilhe do seu jeito.</h3>
+              <p class="muted">Fotos, conversas e momentos em um só lugar.</p>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <section id="explorePage" class="page hidden">
+        <p class="eyebrow">DESCUBRA ALGO NOVO</p>
+        <h1>Explorar</h1>
+        <p class="muted">Encontre inspiração, lugares e novas pessoas.</p>
+        <div class="explore-grid">
+          <img src="https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&w=600&q=80" alt="Lago entre montanhas" loading="lazy">
+          <img src="https://images.unsplash.com/photo-1493246507139-91e8fad9978e?auto=format&fit=crop&w=600&q=80" alt="Floresta verde" loading="lazy">
+          <img src="https://images.unsplash.com/photo-1518837695005-2083093ee35b?auto=format&fit=crop&w=600&q=80" alt="Oceano" loading="lazy">
+          <img src="https://images.unsplash.com/photo-1519608487953-e999c86e7455?auto=format&fit=crop&w=600&q=80" alt="Céu noturno" loading="lazy">
+        </div>
+      </section>
+
+      <section id="messagesPage" class="page hidden">
+        <p class="eyebrow">CONECTE-SE</p>
+        <h1>Mensagens</h1>
+        <div class="panel-card">
+          <span class="avatar">S</span>
+          <h3>Seu espaço de conversas está chegando.</h3>
+          <p class="muted">Vamos conectar as mensagens ao servidor na próxima etapa.</p>
+        </div>
+      </section>
+
+      
+<section id="profilePage" class="page hidden">
+  <p class="eyebrow">SUA IDENTIDADE</p>
+  <h1>Meu perfil</h1>
+
+  <div class="panel-card profile-page-card">
+    <img
+      id="profilePhoto"
+      class="avatar avatar-large hidden"
+      alt="Foto de perfil"
+    >
+
+    <span class="avatar avatar-large" id="profileAvatar">S</span>
+
+    <h2 id="profileName">Samorano</h2>
+    <p class="muted" id="profileEmail">Sua conta</p>
+    <p id="profileUsername">@seuusuario</p>
+    <p id="profileBio">Adicione uma biografia ao seu perfil.</p>
+
+    <form id="profileForm">
+      <label for="usernameInput">Nome de usuário</label>
+      <input
+        id="usernameInput"
+        type="text"
+        minlength="3"
+        maxlength="30"
+        pattern="[A-Za-z0-9_.]+"
+        placeholder="Ex.: carlos_samorano"
+        required
+      >
+
+      <label for="bioInput">Biografia</label>
+      <textarea
+        id="bioInput"
+        maxlength="300"
+        rows="4"
+        placeholder="Conte um pouco sobre você..."
+      ></textarea>
+
+      <label for="avatarInput">Foto de perfil (JPG, PNG ou WebP; até 5 MB)</label>
+      <input
+        id="avatarInput"
+        type="file"
+        accept="image/jpeg,image/png,image/webp"
+      >
+
+      <button class="primary-button" type="submit">
+        Salvar perfil
+      </button>
+
+      <p id="profileMessage" class="muted" role="status"></p>
+    </form>
+
+    
+    <button class="primary-button" data-go="publish">
+      ＋ Criar publicação
+    </button>
+  </div>
+
+  <div class="profile-posts">
+    <h2>Minhas publicações</h2>
+    <div id="profilePostGrid" class="profile-post-grid"></div>
+    <p id="profilePostsMessage" class="muted" role="status"></p>
+  </div>
+</section>
+
+<section id="publishPage" class="page hidden">
+
+  <p class="eyebrow">MOSTRE SEU MOMENTO</p>
+  <h1>Nova publicação</h1>
+
+  <form id="publishForm" class="panel-card publish-form">
+    <label for="photoInput">Escolha uma foto</label>
+    <input
+      id="photoInput"
+      type="file"
+      accept="image/jpeg,image/png,image/webp"
+      required
+    >
+
+    <img
+      id="photoPreview"
+      class="photo-preview hidden"
+      alt="Prévia da foto selecionada"
+    >
+
+    <label for="captionInput">Escreva uma legenda</label>
+    <textarea
+      id="captionInput"
+      maxlength="2200"
+      rows="4"
+      placeholder="O que você quer compartilhar?"
+    ></textarea>
+
+    <p class="muted">Escolha uma foto para publicar no Samorano.</p>
+    <button class="primary-button" type="submit">Publicar foto</button>
+    <p id="publishMessage" class="muted" role="status"></p>
+  </form>
+</section>
